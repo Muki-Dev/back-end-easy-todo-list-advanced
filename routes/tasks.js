@@ -6,8 +6,14 @@ const filePath = './data/tasks.json';
 
 // Helper pour lire les tâches
 const getTasks = () => {
-	const data = fs.readFileSync(filePath);
-	return JSON.parse(data);
+	try{
+		const data = fs.readFileSync(filePath);
+		return JSON.parse(data);
+	} catch(error) {
+		console.error('Erreur lecture/parsing JSON 🔴: ', error.message);
+		return [];
+	}
+	
 };
 
 // Helper pour ècrire les tâches
