@@ -12,7 +12,7 @@ const getTasks = () => {
 
 // Helper pour ècrire les tâches
 const saveTasks = (tasks) => {
-	fs.writeFileSync(filePath, JSON.stringfy(tasks,null,2));
+	fs.writeFileSync(filePath, JSON.stringify(tasks, null, 2));
 }
 
 // GET toutes les tâches
